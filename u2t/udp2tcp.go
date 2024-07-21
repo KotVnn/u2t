@@ -119,14 +119,14 @@ func (ut *UDP2TCP) ProxySend() {
 
 			ut.aliveTimestamp = time.Now().Unix()
 			_, msg := packMsg(reqContent)
-			_, err := c.conn.Write([]byte(msg))
+			_, err := c.conn.Write(msg)
 			if err != nil {
 				c.conn.Close()
 				c.isAlive = false
 				log.Println("UDP_2_TCP disconnect from " + tcp_server)
 				continue
 			}
-			// log.Println("UDP_2_TCP Write to udp_tcp_proxy server: ", tcp_server, ", len:", size)
+			log.Println("UDP_2_TCP Write to udp_tcp_proxy server: ", tcp_server)
 		}
 	}
 }

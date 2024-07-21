@@ -8,7 +8,7 @@ const (
 )
 
 func main() {
-	go u2t.TCPServer("127.0.0.1", 12345)
+	//go u2t.TCPServer("127.0.0.1", 12346)
 	// go t2u.UDPServer(ip, 1399)
 
 	// go u2t.UdpToTcpMain(ip, port)
